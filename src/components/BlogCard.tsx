@@ -5,7 +5,7 @@ import React from 'react'
 function BlogCard() {
   return (
     <>
-    <div  className='roundec-lg shadow-md p-4 mb-4 overflow-hidden border-gray-600 cursor-pointer'>
+    <div className='roundec-lg shadow-md p-4 mb-4 overflow-hidden border-gray-600 cursor-pointer'>
         <Link href={"/"}>
             <div>
             <Image src={""} alt='' layout='fill' objectFit='cover'className='rounded-t-lg'/>
