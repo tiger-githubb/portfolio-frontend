@@ -1,12 +1,14 @@
-import React from 'react'
-import Category from './Category'
+import React from "react";
+import Category from "./Category";
 
-export const Categories = () => {
+export const Categories = ({ categories }: any) => {
   return (
     <div className="flex gap-6 mb-8">
-    <Category/>
-    <Category/>
-    <Category/>
+      {categories?.data?.map((category: any) => (
+        <div key={category.id}>
+          <Category cat={category}/>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
