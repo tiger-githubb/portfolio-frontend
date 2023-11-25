@@ -7,14 +7,17 @@ function BlogCard({ blog }: any) {
     blog?.attributes.Description.length > 80
       ? blog?.attributes.Description.substring(0, 80) + "..."
       : blog?.attributes.Description;
+      
   const blogImg = blog?.attributes.img.data.attributes.url || "";
 
   const imageUrl = "http://127.0.0.1:1337" + blogImg;
 
+  const slug = blog?.id;
+
   return (
     <>
       <div className="roundec-lg shadow-md p-4 mb-4 overflow-hidden border-gray-600 cursor-pointer">
-        <Link href={"/blog/23"}>
+        <Link href={"/blog/" + slug}>
           <div
             className="relative w-full h-1"
             style={{ paddingBottom: "100%" }}
