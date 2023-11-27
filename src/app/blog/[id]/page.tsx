@@ -34,7 +34,7 @@ export default async function page({ params }: any) {
       <div className="max-w-3xl mx-auto p-4">
         <Link href={"/"}>{"Back"}</Link>
         <div className="relative w-full h-96 overflow-hidden rounded-lg mt-5">
-          <Image src={imageUrl} alt={""} layout="fill" objectFit="cover" />
+          <Image src={imageUrl} alt={""} layout="fill" priority objectFit="cover" />
         </div>
         <div className="mt-4">
           <h1 className="text-3xl font-semibold">

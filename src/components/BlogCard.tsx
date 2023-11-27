@@ -27,6 +27,7 @@ function BlogCard({ blog }: any) {
               alt=""
               layout="fill"
               objectFit="cover"
+              priority
               className="rounded-t-lg"
             />
           </div>
