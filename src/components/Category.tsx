@@ -6,7 +6,11 @@ const Category = ({ cat }: any) => {
   return (
     <div
       onClick={() => changeCategory(cat.attributes.Title)}
-      className=" bg-slate-400 p-4 rounded-lg shadow-md cursor-pointer "
+      className={`${
+        cat.attributes.Title === category
+          ? "bg-white text-black"
+          : "bg-slate-400"
+      } " p-4 rounded-lg shadow-md cursor-pointer  `}
     >
       {cat.attributes.Title}
     </div>
