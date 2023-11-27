@@ -2,6 +2,7 @@
 
 import { createContext, useState } from "react";
 
+export const CategoryContext = createContext();
 
 // Provider component that wraps the app and makes category available to any child component that calls it.
 export const CategoryProvider = ({ children }) => {
