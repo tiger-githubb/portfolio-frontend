@@ -8,7 +8,7 @@ export const Categories = ({ categories }: any) => {
 
   useLayoutEffect(() => {
     changeCategory(categories?.data[0].attributes.Title);
-  })
+  },[]);
 
   return (
     <div className="flex gap-6 mb-8">
