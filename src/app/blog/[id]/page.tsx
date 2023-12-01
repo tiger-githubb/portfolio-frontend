@@ -51,6 +51,20 @@ export default async function page({ params }: any) {
             objectFit="cover"
           />
         </div>
+        <span className="text-sm">
+          {" "}
+          Published on{" "}
+          {new Date(blog.data.attributes.publishedAt).toLocaleString()}{" "}
+        </span>
+        <div className="mt-4">
+          <h1 className="text-3xl font-semibold">
+            {blog.data.attributes.Title}
+          </h1>
+
+          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+
+          <div className="flex mt-4 items-center text-gray-400"></div>
+        </div>
 
       </div>
     </>
