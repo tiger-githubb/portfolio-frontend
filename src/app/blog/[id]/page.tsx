@@ -30,7 +30,12 @@ export default async function page({ params }: any) {
   const blogImg = blog?.data.attributes.img.data.attributes.url || "";
 
   const imageUrl = "http://127.0.0.1:1337" + blogImg;
+  const content = blog?.data.attributes.Description || "";
+  console.log(content);
+  const processedContent = await remark().use(html).process(content);
+  const contentHtml = processedContent.toString();
 
+  console.log(contentHtml);
 
 
   return (
