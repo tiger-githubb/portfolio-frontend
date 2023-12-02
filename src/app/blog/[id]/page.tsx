@@ -34,14 +34,12 @@ export default async function page({ params }: any) {
   const processedContent = await remark().use(html).process(content);
   const contentHtml = processedContent.toString();
 
-
-
   return (
     <>
       <div className="max-w-3xl mx-auto p-4">
         <Link href={"/"}>{"Back"}</Link>
         <div className="relative w-full h-96 overflow-hidden rounded-lg mt-5">
-        <Image
+          <Image
             src={imageUrl}
             alt={""}
             layout="fill"
@@ -58,12 +56,12 @@ export default async function page({ params }: any) {
           <h1 className="text-3xl font-semibold">
             {blog.data.attributes.Title}
           </h1>
-
-          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <article className="prose prose-slate">
+            <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          </article>
 
           <div className="flex mt-4 items-center text-gray-400"></div>
         </div>
-
       </div>
     </>
   );
