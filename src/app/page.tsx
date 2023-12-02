@@ -23,7 +23,7 @@ async function fetchBlogs() {
   };
 
   try {
-    const res = await fetch("http://127.0.0.1:1337/api/blogs?populate=*");
+    const res = await fetch(`${process.env.API_URL}`+"/api/blogs?populate=*");
     const response = await res.json();
     return response;
   } catch {}
