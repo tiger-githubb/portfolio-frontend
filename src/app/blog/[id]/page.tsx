@@ -13,7 +13,7 @@ async function fetchBlog(id: number) {
 
   try {
     const res = await fetch(
-      `http://127.0.0.1:1337/api/blogs/${id}/?populate=*`
+      `${process.env.API_URL}`+`/api/blogs/${id}/?populate=*`
     );
     const response = await res.json();
     return response;
@@ -29,7 +29,7 @@ export default async function page({ params }: any) {
 
   const blogImg = blog?.data.attributes.img.data.attributes.url || "";
 
-  const imageUrl = "http://127.0.0.1:1337" + blogImg;
+  const imageUrl = `${process.env.API_URL}`+ blogImg;
   const content = blog?.data.attributes.Description || "";
   const processedContent = await remark().use(html).process(content);
   const contentHtml = processedContent.toString();
