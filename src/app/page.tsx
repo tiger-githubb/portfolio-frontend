@@ -9,7 +9,7 @@ async function fetchCategories() {
   };
 
   try {
-    const res = await fetch("http://127.0.0.1:1337/api/categories");
+    const res = await fetch(`${process.env.API_URL}`+"/api/categories");
     const response = await res.json();
     return response;
   } catch {}
